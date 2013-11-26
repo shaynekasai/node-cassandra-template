@@ -13,6 +13,6 @@ I've adapted some of the code from http://danialk.github.io/blog/2013/01/23/simp
 
 TODO:
 - Create DB abstraction layer
-- Add liquid support: npm install liquid
+- GRUNT support?
 - Add CRUD to test.js
 - Add support for site.json
