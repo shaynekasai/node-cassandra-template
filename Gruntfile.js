@@ -9,17 +9,33 @@ module.exports = function(grunt) {
 			expand: true,
 			cwd: 'src/js/',
 			src: ['**/*.js'],
-			dest: 'build/',
+			dest: 'build/assets/js/',
 			ext: '.min.js'
 		}]
+	}
+    },
+
+
+    liquid: {
+	pages: {
+		files: [
+			{
+				expand: true, 
+				flatten: true, 
+				cwd: 'liquid/', 
+				src: '*.html', 
+				dest: 'build/', 
+				ext: '.html'
+			}
+		]
 	}
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
+  grunt.loadNpmTasks('grunt-liquid');
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['uglify','liquid']);
 
 };
