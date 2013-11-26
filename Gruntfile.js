@@ -15,6 +15,15 @@ module.exports = function(grunt) {
 	}
     },
 
+    cssmin: {
+	minify: {
+		expand: true,
+		cwd: 'src/css/',
+		src: ['*.css', '!*.min.css'],
+		dest: 'build/assets/css/',
+		ext: '.min.css'
+	}	
+    },
 
     liquid: {
 	pages: {
@@ -35,7 +44,9 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-liquid');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+
   // Default task(s).
-  grunt.registerTask('default', ['uglify','liquid']);
+  grunt.registerTask('default', ['uglify', 'cssmin', 'liquid']);
 
 };
