@@ -15,6 +15,18 @@ module.exports = function(grunt) {
 	}
     },
 
+    sass: {
+	dist: {
+    		files: [{
+       			 expand: true,
+       			 cwd: 'src/scss/',
+       			 src: ['*.scss'],
+       			 dest: '../css',
+       			 ext: '.css'
+      		}]
+    	}
+    },
+
     cssmin: {
 	minify: {
 		expand: true,
@@ -45,8 +57,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-liquid');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'cssmin', 'liquid']);
+  grunt.registerTask('default', ['uglify', 'sass', 'cssmin', 'liquid']);
 
 };
