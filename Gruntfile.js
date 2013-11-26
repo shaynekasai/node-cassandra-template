@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 			{
 				expand: true, 
 				flatten: true, 
-				cwd: 'liquid/', 
+				cwd: 'src/liquid/', 
 				src: '*.html', 
 				dest: 'build/', 
 				ext: '.html'
