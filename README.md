@@ -10,6 +10,7 @@ but the idea is for this to be as simple as possible.
 - Helenus (npm install helenus)
 - GRUNT
 - Restify
+- Passport
 
 I've adapted some of the code from http://danialk.github.io/blog/2013/01/23/simple-node-server/
 
